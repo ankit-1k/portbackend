@@ -19,5 +19,13 @@ router.post('/api/contact', async (req, res) => {
       res.status(500).json({ error: 'Failed to save message' });
     }
   });
-
+  router.get('/api/contact', async (req, res) => {
+    try {
+      const contacts = await Contact.find();
+      res.status(200).json(contacts);
+    } catch (error) {
+      console.error('Error fetching messages:', error);
+      res.status(500).json({ error: 'Failed to fetch messages' });
+    }
+  });
 module.exports = router;
