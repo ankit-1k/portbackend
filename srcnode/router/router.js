@@ -12,7 +12,7 @@ router.post('/api/contact', async (req, res) => {
       });
   
       await newContact.save();
-      console.log('Message saved:', newContact);
+      console.log('Message saveds:', newContact);
       res.status(200).json({ message: 'Message saved successfully' });
     } catch (error) {
       console.error('Error saving message:', error);
